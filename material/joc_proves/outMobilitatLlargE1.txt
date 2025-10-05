@@ -1,0 +1,212 @@
+********************
+* 01: Llegir dades *
+********************
+Numero de linies: 76308
+*************************
+* 02: Nombre transports *
+*************************
+Distància Menys de 500 metres ==> 23
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 500 a 2.000 metres ==> 23
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 2.000 a 5.000 metres ==> 23
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 5.000 a 10.000 metres ==> 24
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 10.000 a 50.000 metres ==> 23
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 50.000 a 100.000 metres ==> 17
+*************************
+* 02: Nombre transports *
+*************************
+Distància Més de 100.000 metres ==> 9
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància Menys de 500 metres
+0 : Peu <= 5 minuts => 4944
+1 : Peu >5 minuts => 4466
+2 : Cotxe com a conductora => 691
+3 : Cotxe com a acompanyant => 139
+4 : Moto com a conductora => 56
+5 : Bicicleta => 55
+6 : Altres no motoritzats => 46
+7 : Autobús TMB => 43
+8 : Furgoneta => 42
+9 : Altres autobús => 33
+10 : Metro => 8
+11 : Ciclomotor com a conductora => 6
+12 : Taxi => 4
+13 : Camió => 4
+14 : Autocar => 3
+15 : Tramvia => 3
+16 : Autobús empresa => 2
+17 : Moto com a acompanyant => 2
+18 : FGC => 2
+19 : Ciclomotor com a acompanyant => 1
+20 : Rodalies Renfe => 1
+21 : Altres mitjans públics => 1
+22 : Altres vehicles privats => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 500 a 2.000 metres
+0 : Peu >5 minuts => 4576
+1 : Cotxe com a conductora => 2554
+2 : Cotxe com a acompanyant => 611
+3 : Autobús TMB => 473
+4 : Altres autobús => 384
+5 : Moto com a conductora => 312
+6 : Metro => 286
+7 : Bicicleta => 255
+8 : Altres no motoritzats => 116
+9 : Furgoneta => 100
+10 : Ciclomotor com a conductora => 55
+11 : Taxi => 47
+12 : FGC => 44
+13 : Tramvia => 42
+14 : Moto com a acompanyant => 23
+15 : Ciclomotor com a acompanyant => 7
+16 : Camió => 7
+17 : Rodalies Renfe => 7
+18 : Autocar => 5
+19 : Altres vehicles privats => 4
+20 : Autobús empresa => 2
+21 : Altres mitjans públics => 2
+22 : Autobús escolar => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 2.000 a 5.000 metres
+0 : Cotxe com a conductora => 2282
+1 : Metro => 832
+2 : Peu >5 minuts => 683
+3 : Cotxe com a acompanyant => 563
+4 : Autobús TMB => 547
+5 : Altres autobús => 342
+6 : Moto com a conductora => 331
+7 : Bicicleta => 178
+8 : FGC => 156
+9 : Furgoneta => 110
+10 : Tramvia => 87
+11 : Taxi => 77
+12 : Altres no motoritzats => 70
+13 : Rodalies Renfe => 59
+14 : Ciclomotor com a conductora => 41
+15 : Moto com a acompanyant => 26
+16 : Camió => 16
+17 : Autobús empresa => 9
+18 : Ciclomotor com a acompanyant => 6
+19 : Autobús escolar => 5
+20 : Altres vehicles privats => 2
+21 : Autocar => 2
+22 : Tren regional => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 5.000 a 10.000 metres
+0 : Cotxe com a conductora => 2055
+1 : Metro => 558
+2 : Cotxe com a acompanyant => 393
+3 : Moto com a conductora => 229
+4 : Altres autobús => 162
+5 : FGC => 153
+6 : Rodalies Renfe => 153
+7 : Furgoneta => 118
+8 : Autobús TMB => 111
+9 : Bicicleta => 72
+10 : Tramvia => 56
+11 : Taxi => 29
+12 : Ciclomotor com a conductora => 21
+13 : Peu >5 minuts => 18
+14 : Camió => 15
+15 : Altres no motoritzats => 10
+16 : Moto com a acompanyant => 8
+17 : Autobús escolar => 6
+18 : Autobús empresa => 5
+19 : Altres mitjans públics => 4
+20 : Autocar => 3
+21 : Ciclomotor com a acompanyant => 3
+22 : Tren regional => 2
+23 : Altres vehicles privats => 2
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 10.000 a 50.000 metres
+0 : Cotxe com a conductora => 2866
+1 : Rodalies Renfe => 579
+2 : Cotxe com a acompanyant => 489
+3 : FGC => 321
+4 : Altres autobús => 261
+5 : Metro => 231
+6 : Furgoneta => 204
+7 : Moto com a conductora => 182
+8 : Camió => 34
+9 : Bicicleta => 26
+10 : Autobús TMB => 24
+11 : Autobús empresa => 20
+12 : Ciclomotor com a conductora => 18
+13 : Taxi => 17
+14 : Tramvia => 16
+15 : Tren regional => 15
+16 : Autocar => 8
+17 : Moto com a acompanyant => 6
+18 : Autobús escolar => 4
+19 : Altres mitjans públics => 2
+20 : Ciclomotor com a acompanyant => 2
+21 : Altres no motoritzats => 1
+22 : Peu >5 minuts => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 50.000 a 100.000 metres
+0 : Cotxe com a conductora => 232
+1 : Cotxe com a acompanyant => 87
+2 : Rodalies Renfe => 29
+3 : Furgoneta => 24
+4 : Metro => 19
+5 : Camió => 16
+6 : Altres autobús => 11
+7 : Tren regional => 6
+8 : Moto com a conductora => 3
+9 : FGC => 3
+10 : Autocar => 3
+11 : Tramvia => 2
+12 : Autobús TMB => 2
+13 : Taxi => 1
+14 : Altres mitjans públics => 1
+15 : Autobús escolar => 1
+16 : Autobús empresa => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància Més de 100.000 metres
+0 : Cotxe com a conductora => 57
+1 : Cotxe com a acompanyant => 22
+2 : Tren regional => 5
+3 : Rodalies Renfe => 3
+4 : Autocar => 2
+5 : Altres autobús => 2
+6 : Altres mitjans públics => 2
+7 : Furgoneta => 2
+8 : Moto com a conductora => 1
+*******************
+* 04: Més ràpid *
+*******************
+Menys de 500 metres : Altres vehicles privats => 2
+De 500 a 2.000 metres : Cotxe com a conductora => 8.58863
+De 2.000 a 5.000 metres : Altres vehicles privats => 10
+De 5.000 a 10.000 metres : Altres vehicles privats => 11
+De 10.000 a 50.000 metres : Ciclomotor com a acompanyant => 21.6667
+De 50.000 a 100.000 metres : Altres mitjans públics => 60
+Més de 100.000 metres : Moto com a conductora => 75

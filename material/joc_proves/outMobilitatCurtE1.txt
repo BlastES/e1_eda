@@ -1,0 +1,108 @@
+********************
+* 01: Llegir dades *
+********************
+Numero de linies: 348
+*************************
+* 02: Nombre transports *
+*************************
+Distància Menys de 500 metres ==> 3
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 500 a 2.000 metres ==> 8
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 2.000 a 5.000 metres ==> 13
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 5.000 a 10.000 metres ==> 8
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 10.000 a 50.000 metres ==> 6
+*************************
+* 02: Nombre transports *
+*************************
+Distància De 50.000 a 100.000 metres ==> 0
+*************************
+* 02: Nombre transports *
+*************************
+Distància Més de 100.000 metres ==> 0
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància Menys de 500 metres
+0 : Peu >5 minuts => 27
+1 : Peu <= 5 minuts => 25
+2 : Cotxe com a conductora => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 500 a 2.000 metres
+0 : Peu >5 minuts => 30
+1 : Metro => 9
+2 : Autobús TMB => 6
+3 : Bicicleta => 6
+4 : Cotxe com a conductora => 4
+5 : Moto com a conductora => 3
+6 : Altres no motoritzats => 1
+7 : Tramvia => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 2.000 a 5.000 metres
+0 : Metro => 13
+1 : Autobús TMB => 8
+2 : Cotxe com a conductora => 4
+3 : Peu >5 minuts => 4
+4 : FGC => 2
+5 : Taxi => 2
+6 : Bicicleta => 2
+7 : Altres no motoritzats => 1
+8 : Furgoneta => 1
+9 : Tramvia => 1
+10 : Moto com a conductora => 1
+11 : Ciclomotor com a conductora => 1
+12 : Ciclomotor com a acompanyant => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 5.000 a 10.000 metres
+0 : Metro => 6
+1 : Altres autobús => 3
+2 : Cotxe com a conductora => 3
+3 : Autobús TMB => 2
+4 : Cotxe com a acompanyant => 2
+5 : Tramvia => 1
+6 : Taxi => 1
+7 : Moto com a conductora => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 10.000 a 50.000 metres
+0 : Cotxe com a conductora => 3
+1 : Cotxe com a acompanyant => 2
+2 : FGC => 2
+3 : Altres autobús => 2
+4 : Moto com a conductora => 1
+5 : Rodalies Renfe => 1
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància De 50.000 a 100.000 metres
+*************************************
+* 03: Nombre persones per transport *
+*************************************
+Distància Més de 100.000 metres
+*******************
+* 04: Més ràpid *
+*******************
+Menys de 500 metres : Peu <= 5 minuts => 3.89091
+De 500 a 2.000 metres : Moto com a conductora => 8.75
+De 2.000 a 5.000 metres : Altres no motoritzats => 6.5
+De 5.000 a 10.000 metres : Taxi => 20
+De 10.000 a 50.000 metres : Moto com a conductora => 30
+De 50.000 a 100.000 metres : -- => 1.79769e+308
+Més de 100.000 metres : -- => 1.79769e+308
