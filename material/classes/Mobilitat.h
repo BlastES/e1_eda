@@ -6,6 +6,9 @@
 #define MOBILITAT_H
 
 #include <string>
+#include "Distancia.h"
+//#include "Transport.h"
+#include "Persona.h"
 
 using namespace std;
 
@@ -14,10 +17,12 @@ class Mobilitat {
         Mobilitat();
         int llegirDades(const string& path);
         int nombreTransports(int distancia) const; 
-        CONTENIDOR nombrePersonesPerTransport(int distancia) const;
-        CONTENIDOR mesRapid() const;
+        vector<pair<string, int>> nombrePersonesPerTransport(int distancia) const;
+        vector<pair<string, int>> mesRapid() const;
 
     private:
+        vector<Distancia> dist;
+        vector<Persona> persones;
 
 };
 
