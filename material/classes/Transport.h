@@ -6,19 +6,44 @@
 #define TRANSPORT_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Transport {
-    public: 
+    public:
         Transport(string nom);
-        void afegir(int id, int ordre, string tipusTrajecte, int horaIn, int durada, string comarcaIn, string comarcaFi, int edat, string estudis);
+
+        void afegir(int id, int ordre, string tipusTrajecte, int horaIn, double durada, string comarcaIn, string comarcaFi, int edat, string estudis);
+
         string obtenirNom() const;
+
         int obtenirNombrePersones() const;
-        double obtenirTempsPromig() const;
+
+        double obtenirTempsPromig() const; //Cost lineal
+
         bool operator==(const Transport& m) const;
 
+        struct Info{
+            int id;
+            int ordre;
+            string tipusTrajecte;
+            int horaIn;
+            double durada;
+            string comarcaIn;
+            string comarcaFi;
+            int edat;
+            string estudis;
+        };
     private:
+        // Atributs
+        string nom;
+        vector<Info> dades;
+        double durada_total;
+
+
 };
 
 #endif // TRANSPORT_H
+
+
