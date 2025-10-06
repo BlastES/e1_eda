@@ -1,4 +1,5 @@
-#include "material\classes\Transport.h"
+#include "Transport.h"
+#include <iostream>
 
 Transport::Transport(string nom){
     this->nom = nom;
@@ -16,6 +17,7 @@ void Transport::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int 
     i.comarcaFi = comarcaFi;
     i.edat = edat;
     i.estudis = estudis;
+    dades.push_back(i);
     durada_total += durada;
 }
 
@@ -33,4 +35,27 @@ double Transport::obtenirTempsPromig() const{
 
 bool Transport::operator==(const Transport &m) const{
     return this->nom == m.nom;
+}
+
+bool Transport::operator<(const Transport &m) const{
+    return dades.size() < m.dades.size();
+}
+
+bool Transport::operator<=(const Transport &m) const{
+    return dades.size() <= m.dades.size();
+}
+
+bool Transport::operator>(const Transport &m) const{
+    return dades.size() > m.dades.size();
+}
+
+bool Transport::operator>=(const Transport &m) const{
+    return dades.size() >= m.dades.size();
+}
+
+Transport& Transport::operator=(const Transport& m){
+    this->nom = m.nom;
+    this->durada_total = m.durada_total;
+    this->dades = m.dades;
+    return *this;
 }

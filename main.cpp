@@ -1,32 +1,33 @@
-#include "material\classes\Mobilitat.h"
+#include "Mobilitat.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 void titol_opcions(int i){
     switch (i)
     {
     case 1:
-        cerr << string('*', 20) << endl;
+        cerr << setfill('*') << setw(20) << endl;
         cerr << "* 01: Llegir dades *" << endl;
-        cerr << string('*', 20) << endl;
+        cerr << setfill('*') << setw(20) << endl;
         break;
     
     case 2:
-        cerr << string('*', 25) << endl;
+        cerr << setfill('*') << setw(25) << endl;
         cerr << "* 02: Nombre transports *" << endl;
-        cerr << string('*', 25) << endl;
+        cerr << setfill('*') << setw(25) << endl;
         break;
     
     case 3:
-        cerr << string('*', 37) << endl;
+        cerr << setfill('*') << setw(37) << endl;
         cerr << "* 03: Nombre persones per transport *" << endl;
-        cerr << string('*', 37) << endl;
+        cerr << setfill('*') << setw(37) << endl;
         break;
     
     case 4:
-        cerr << string('*', 19) << endl;
+        cerr << setfill('*') << setw(19) << endl;
         cerr << "* 04: Més ràpid *" << endl;
-        cerr << string('*', 19) << endl;   
+        cerr << setfill('*') << setw(19) << endl;   
         break;     
 
     default:

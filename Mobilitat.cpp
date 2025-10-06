@@ -1,13 +1,17 @@
-#include "material\classes\Mobilitat.h"
+#include "Mobilitat.h"
+#include <iostream>
 
 Mobilitat::Mobilitat(){
     for(int i = 1; i <= 7; i++){
-        dist.push_back(Distancia(i));
+        this->dist.push_back(Distancia(i));
     }
 }
 
-int Mobilitat::llegirDades(const string& path){
+int Mobilitat::llegirDades(const string& path){    
     dist.clear();
+    for(int i = 1; i <= 7; i++){
+        this->dist.push_back(Distancia(i));
+    }
     persones.clear();
     ifstream f;
     string linia;
@@ -19,14 +23,15 @@ int Mobilitat::llegirDades(const string& path){
         getline(f, linia);
         while(!f.eof()){
             items = tokens(linia, ',', true);
-            dist.at(stoi(items.at(7))).afegir(stoi(items.at(0)), stoi(items.at(2)), items.at(3), stoi(items.at(4))%24, stoi(items.at(6)), items.at(8), items.at(9), items.at(14), stoi(items.at(20)), items.at(22));
-            if(stoi(items.at(3)) == 1) persones.push_back(Persona(stoi(items.at(0)), stoi(items.at(20)), items.at(22)));
+            dist.at(stoi(items.at(7))-1).afegir(stoi(items.at(0)), stoi(items.at(2)), items.at(3), stoi(items.at(4))%24, stoi(items.at(6)), items.at(8), items.at(9), items.at(14), stoi(items.at(20)), items.at(22));
+            if(stoi(items.at(2)) == 1) persones.push_back(Persona(stoi(items.at(0)), stoi(items.at(20)), items.at(22)));
             n_linies++;
+            getline(f, linia);
         }
-    }
-    for(auto it : dist){
-        it.ordenar_list();
-    }
+        for(auto it : dist){
+            it.ordenar_list();
+        }
+    } 
     return n_linies;
 }
 
@@ -43,4 +48,5 @@ vector<pair<string, double>> Mobilitat::mesRapid() const{
     for(auto i : dist){
         vec.push_back(i.mesRapid());
     }
+    return vec;
 }

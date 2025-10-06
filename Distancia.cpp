@@ -1,15 +1,21 @@
-#include "material\classes\Distancia.h"
+#include "Distancia.h"
+#include <iostream>
 
 Distancia::Distancia(int codi){
     this->codi = codi;
 }
 
+Distancia::Distancia(const Distancia& d){
+    this->codi = d.codi;
+    this->transports = d.transports;
+}
+
 void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int durada, string comarcaIn, string comarcaFi, string mitjaPrincipal, int edat, string estudis){
     bool trobat = false;
-    list<Transport>::iterator it = transports.begin();
+    vector<Transport>::iterator it = transports.begin();
     if(!transports.empty()){
         while(!trobat && it != transports.end()){
-            if(Transport(mitjaPrincipal) == *it)
+            if(it->obtenirNom() == mitjaPrincipal)
                 trobat = true;
             else
                 it++;
@@ -24,8 +30,15 @@ void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int 
 }
 
 void Distancia::ordenar_list(){
-    transports.sort(criteri_ordenacio);
+    int n = transports.size();
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (transports[j] > transports[j + 1])
+                swap(transports[j], transports[j + 1]);
+        }
+    }
 }
+
 
 int Distancia::nombreTransports() const{
     return transports.size();
@@ -45,6 +58,8 @@ vector<pair<string, int>> Distancia::nombrePersonesPerTransport() const{
 pair<string, double> Distancia::mesRapid() const{
     pair<string,double> mes_rapid;
     if(!transports.empty()){
+        mes_rapid.first = transports.front().obtenirNom();
+        mes_rapid.second = transports.front().obtenirTempsPromig();
         for(Transport it : transports){
             if(mes_rapid.second > it.obtenirTempsPromig()){
                 mes_rapid.first = it.obtenirNom();
@@ -58,8 +73,9 @@ pair<string, double> Distancia::mesRapid() const{
     return mes_rapid;
 }
 
-bool Distancia::criteri_ordenacio(const Transport &a, const Transport &b) const{
-    if(a.obtenirNombrePersones() > b.obtenirNombrePersones()) return true;
-    else if(a.obtenirNombrePersones() < b.obtenirNombrePersones()) return false;
-    else return a.obtenirNom() > b.obtenirNom();
+Distancia& Distancia::operator=(const Distancia& d){
+    this->codi = d.codi;
+    this->transports = d.transports;
+    return *this;
 }
+

@@ -1,4 +1,4 @@
-#include "material\classes\Persona.h"
+#include "Persona.h"
 
 Persona::Persona(int id){
     this->id = id;
