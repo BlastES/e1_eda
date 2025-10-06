@@ -17,6 +17,11 @@ class Persona
         bool operator==(const Persona& p) const;
 
     private:
+    // Atributs
+    int id;
+    int edat;
+    string estudis;
+    
 };
 
 #endif // PERSONA_H

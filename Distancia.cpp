@@ -9,7 +9,7 @@ void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int 
     list<Transport>::iterator it = transports.begin();
     if(!transports.empty()){
         while(!trobat && it != transports.end()){
-            if(mitjaPrincipal == it->obtenirNom())
+            if(Transport(mitjaPrincipal) == *it)
                 trobat = true;
             else
                 it++;

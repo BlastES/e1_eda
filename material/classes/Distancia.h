@@ -24,7 +24,6 @@ class Distancia {
         // Atributs
         int codi;
         list<Transport> transports;
-
         bool criteri_ordenacio(const Transport &a, const Transport &b) const;
 };
 
