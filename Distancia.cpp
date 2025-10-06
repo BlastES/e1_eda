@@ -44,11 +44,16 @@ vector<pair<string, int>> Distancia::nombrePersonesPerTransport() const{
 
 pair<string, double> Distancia::mesRapid() const{
     pair<string,double> mes_rapid;
-    for(Transport it : transports){
-        if(mes_rapid.second > it.obtenirTempsPromig()){
-            mes_rapid.first = it.obtenirNom();
-            mes_rapid.second = it.obtenirTempsPromig();
+    if(!transports.empty()){
+        for(Transport it : transports){
+            if(mes_rapid.second > it.obtenirTempsPromig()){
+                mes_rapid.first = it.obtenirNom();
+                mes_rapid.second = it.obtenirTempsPromig();
+            }
         }
+    }else{
+        mes_rapid.first = "--";
+        mes_rapid.second = 0;
     }
     return mes_rapid;
 }

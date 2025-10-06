@@ -38,8 +38,8 @@ vector<pair<string, int>> Mobilitat::nombrePersonesPerTransport(int distancia) c
     return dist.at(distancia-1).nombrePersonesPerTransport();
 }
 
-vector<pair<string, int>> Mobilitat::mesRapid() const{
-    vector<pair<string, int>> vec;
+vector<pair<string, double>> Mobilitat::mesRapid() const{
+    vector<pair<string, double>> vec;
     for(auto i : dist){
         vec.push_back(i.mesRapid());
     }

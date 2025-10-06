@@ -18,7 +18,7 @@ class Mobilitat {
         int llegirDades(const string& path);
         int nombreTransports(int distancia) const; 
         vector<pair<string, int>> nombrePersonesPerTransport(int distancia) const;
-        vector<pair<string, int>> mesRapid() const;
+        vector<pair<string, double>> mesRapid() const;
 
     private:
         vector<Distancia> dist;
