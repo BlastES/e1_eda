@@ -1,5 +1,4 @@
 #include "Mobilitat.h"
-#include <iostream>
 
 Mobilitat::Mobilitat(){
     for(int i = 1; i <= 7; i++){
@@ -28,8 +27,8 @@ int Mobilitat::llegirDades(const string& path){
             n_linies++;
             getline(f, linia);
         }
-        for(auto it : dist){
-            it.ordenar_list();
+        for(int i = 0; i < 7; i++){
+            dist.at(i).ordenar_vec();
         }
     } 
     return n_linies;

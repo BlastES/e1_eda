@@ -1,5 +1,4 @@
 #include "Distancia.h"
-#include <iostream>
 
 Distancia::Distancia(int codi){
     this->codi = codi;
@@ -29,14 +28,8 @@ void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int 
     }
 }
 
-void Distancia::ordenar_list(){
-    int n = transports.size();
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (transports[j] > transports[j + 1])
-                swap(transports[j], transports[j + 1]);
-        }
-    }
+void Distancia::ordenar_vec(){
+    quick_sort(0, transports.size()-1);
 }
 
 
@@ -79,3 +72,29 @@ Distancia& Distancia::operator=(const Distancia& d){
     return *this;
 }
 
+void Distancia::quick_sort(int esq, int dre){
+    int k;
+    if(esq<dre){
+        particio(esq, dre, k);
+        quick_sort(esq, k-1);
+        quick_sort(k+1, dre);
+    }
+}
+
+void Distancia::particio(int esq, int dre, int& pos_pivot){
+    int pivot = transports.at(dre).obtenirNombrePersones();
+    pos_pivot = esq;
+    for(int i = esq; i <= dre-1; i++){
+        if(transports.at(i).obtenirNombrePersones() > pivot){
+            intercanvi(transports.at(i), transports.at(pos_pivot));
+            pos_pivot++;
+        }
+    }
+    intercanvi(transports.at(dre), transports.at(pos_pivot));
+}
+
+void Distancia::intercanvi(Transport& x, Transport& y){
+    Transport aux = x;
+    x = y;
+    y = aux;
+}
