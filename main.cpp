@@ -9,27 +9,27 @@ void titol_opcions(int i){
     switch (i)
     {
     case 1:
-        cerr << setfill('*') << setw(20) << endl;
+        cerr << string(20, '*') << endl;
         cerr << "* 01: Llegir dades *" << endl;
-        cerr << setfill('*') << setw(20) << endl;
+        cerr << string(20, '*') << endl;
         break;
     
     case 2:
-        cerr << setfill('*') << setw(25) << endl;
+        cerr << string(25, '*') << endl;
         cerr << "* 02: Nombre transports *" << endl;
-        cerr << setfill('*') << setw(25) << endl;
+        cerr << string(25, '*') << endl;
         break;
     
     case 3:
-        cerr << setfill('*') << setw(37) << endl;
+        cerr << string(37, '*') << endl;
         cerr << "* 03: Nombre persones per transport *" << endl;
-        cerr << setfill('*') << setw(37) << endl;
+        cerr << string(37, '*') << endl;
         break;
     
     case 4:
-        cerr << setfill('*') << setw(19) << endl;
+        cerr << string(17, '*') << endl;
         cerr << "* 04: Més ràpid *" << endl;
-        cerr << setfill('*') << setw(19) << endl;   
+        cerr << string(17, '*') << endl;   
         break;     
 
     default:
