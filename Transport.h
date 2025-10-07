@@ -16,17 +16,49 @@
 using namespace std;
 
 class Transport {
-    public: 
+    public:
+        // Pre: cert
+        // Post: this->nom = nom
         Transport(string nom);
+
+        // Pre: cert
+        // Post: variables guardades als respectius espais de info i info guardada a vector dades
         void afegir(int id, int ordre, string tipusTrajecte, int horaIn, int durada, string comarcaIn, string comarcaFi, int edat, string estudis);
+        
+        // Pre: --
+        // Post: resultat = this->nom
         string obtenirNom() const;
+
+        // Pre: --
+        // Post: resutlat = tamany vector dades
         int obtenirNombrePersones() const;
-        double obtenirTempsPromig() const; //Cost lineal
+
+        // Pre: --
+        // Post: resutlat = temps_total / nombre de persones
+        double obtenirTempsPromig() const;
+
+        // Pre: cert
+        // Post: true si this->nom = m.nom
         bool operator==(const Transport& m) const;
+
+        // Pre: cert
+        // Post: true si this->dades.size() <  m.dades.size()
         bool operator<(const Transport& m) const;
+
+        // Pre: cert
+        // Post: true si this->dades.size() <=  m.dades.size()
         bool operator<=(const Transport& m) const;
+
+        // Pre: cert
+        // Post: true si this->dades.size() >  m.dades.size()
         bool operator>(const Transport& m) const;
+
+        // Pre: cert
+        // Post: true si this->dades.size() >=  m.dades.size()
         bool operator>=(const Transport& m) const;
+
+        // Pre: cert
+        // Post: *this és copia de m i resultat = *this
         Transport& operator=(const Transport& m);
         
 

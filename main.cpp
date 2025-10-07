@@ -3,6 +3,8 @@
 #include <iomanip>
 using namespace std;
 
+// Pre: --
+// Post: imprimeix per pantalla la capçalera de l'opció escollida
 void titol_opcions(int i){
     switch (i)
     {
@@ -35,6 +37,8 @@ void titol_opcions(int i){
     }
 }
 
+// Pre: --
+// Post: Imprimeix per pantalla la representació escrita del codi de distància
 void codis_distancia(int i){
     switch (i)
     {
@@ -71,6 +75,8 @@ void codis_distancia(int i){
     }
 }
 
+// Pre: cert
+// Post: Llegeix el nom del fitxer i emmagatzema les dades en l'objecte mob
 void opcio_1(Mobilitat& mob){
     string file_name;
     cin >> file_name;
@@ -78,15 +84,21 @@ void opcio_1(Mobilitat& mob){
     cout << "Numero de linies: " << linies_llegides << endl;
 }
 
+// Pre: cert
+// Post: Donat un codi de distancia, imprimeix la representació escrita del codi de distancia seguida del
+// nombre de transports que pertanyen a la distancia indicada
 void opcio_2(Mobilitat& mob){
     int codi_distancia;
     cin >> codi_distancia;
     int n_transports = mob.nombreTransports(codi_distancia);
     cout << "Distància ";
     codis_distancia(codi_distancia);
-    cout << " ==> " <<n_transports << endl;    
+    cout << " ==> " << n_transports << endl;    
 }
 
+// Pre: cert
+// Post: Donat un codi de distancia, imprimeix la llista de veicles de la distancia indicada
+// seguida del nombre de persones de cada mitjà. Ho imprimeix en ordre descendent del nombre de persones
 void opcio_3(Mobilitat& mob){
     int codi_distancia;
     cin >> codi_distancia;
@@ -98,16 +110,19 @@ void opcio_3(Mobilitat& mob){
     }
 }
 
+// Pre: cert
+// Post: imprimeix per cada codi de distancia, el vehicle més ràpid i el temps promig de
+// tots els viatges realitzats amb aquest vehicle.
 void opcio_4(Mobilitat& mob){
     vector<pair<string, double>> vec = mob.mesRapid();
-    string transport;
-    double temps_mig;
     for(int i = 1; i <= 7; i++){
         codis_distancia(i);
         cout << " : " << vec.at(i-1).first << " => " << vec.at(i-1).second << endl;
     }
 }
 
+// Pre: 1 <= i <= 4
+// Post: imprimeix el titol de la operació seleccionada i executa la tasca
 void operacions_menu(int i, Mobilitat& mob){
     titol_opcions(i);
     switch (i)
