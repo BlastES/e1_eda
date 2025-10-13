@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include "eines.h"
+#include "Persona.h"
 
 
 using namespace std;
@@ -77,6 +78,7 @@ class Transport {
         // Atributs
         string nom;
         vector<Info> dades;
+        vector<Persona> persones;
         double durada_total;
 
 

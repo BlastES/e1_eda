@@ -27,9 +27,9 @@ void titol_opcions(int i){
         break;
     
     case 4:
-        cerr << string(17, '*') << endl;
+        cerr << string(19, '*') << endl;
         cerr << "* 04: Més ràpid *" << endl;
-        cerr << string(17, '*') << endl;   
+        cerr << string(19, '*') << endl;   
         break;     
 
     default:
@@ -91,9 +91,7 @@ void opcio_2(Mobilitat& mob){
     int codi_distancia;
     cin >> codi_distancia;
     int n_transports = mob.nombreTransports(codi_distancia);
-    cout << "Distància ";
-    codis_distancia(codi_distancia);
-    cout << " ==> " << n_transports << endl;    
+    cout << "Distància:" << codi_distancia << " ==> " << n_transports << endl;;  
 }
 
 // Pre: cert
@@ -102,8 +100,7 @@ void opcio_2(Mobilitat& mob){
 void opcio_3(Mobilitat& mob){
     int codi_distancia;
     cin >> codi_distancia;
-    codis_distancia(codi_distancia);
-    cout << endl;
+    cout << "Distància " << codi_distancia << endl;
     vector<pair<string, int>> vec = mob.nombrePersonesPerTransport(codi_distancia);
     for(int i = 0; i < vec.size(); i++){
         cout << i << " : " << vec.at(i).first << " => " << vec.at(i).second << endl; 
