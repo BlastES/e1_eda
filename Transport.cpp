@@ -8,24 +8,13 @@ Transport::Transport(string nom){
 
 void Transport::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int durada, string comarcaIn, string comarcaFi, int edat, string estudis){
     Info i;
-    i.id = id;
+    i.persona = Persona(id, edat, estudis);
     i.ordre = ordre;
     i.tipusTrajecte = tipusTrajecte;
     i.horaIn = horaIn;
     i.durada = durada;
-    i.comarcaIn = comarcaIn;
-    i.comarcaFi = comarcaFi;
-    i.edat = edat;
-    i.estudis = estudis;
-    bool trobat = false;
-    vector<Persona>::iterator it = persones.begin();
-    while(!trobat and it != persones.end()){
-        if(*it == Persona(id)) trobat = true;
-        else it++;
-    }
-    if(!trobat){
-        persones.push_back(Persona(id, edat, estudis));
-    }
+    i.trajecte = comarcaIn + " - " + comarcaFi;
+    persones.insert(Persona(id, edat, estudis));
     dades.push_back(i);
     durada_total += durada;
 }
@@ -40,6 +29,10 @@ int Transport::obtenirNombrePersones() const{
 
 double Transport::obtenirTempsPromig() const{
     return durada_total/dades.size();
+}
+
+void Transport::ordenarTrajectes(){
+    dades.sort(comparacioDurada);
 }
 
 bool Transport::operator==(const Transport &m) const{
@@ -68,4 +61,8 @@ Transport& Transport::operator=(const Transport& m){
     this->dades = m.dades;
     this->persones = m.persones;
     return *this;
+}
+
+bool Transport::comparacioDurada(const Info& primer, const Info& segon){
+    return primer.durada < segon.durada;
 }

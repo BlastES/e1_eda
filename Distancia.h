@@ -6,6 +6,7 @@
 #define DISTANCIA_H
 
 #include <string>
+#include <map>
 #include "Transport.h"
 
 using namespace std;
@@ -41,6 +42,10 @@ class Distancia {
         // Post: resutlat = nom del transport amb menor temps mig i el seu temps mig
         pair<string,double> mesRapid() const;
 
+        pair<string, double> trajecteMesLlarg() const;
+
+        map<string, int> llistaTrajectes() const;
+
         // Pre: cert
         // Post: *this és copia de d i retorna *this
         Distancia& operator=(const Distancia& d);
@@ -49,6 +54,8 @@ class Distancia {
         // Atributs
         int codi;
         vector<Transport> transports;
+        map<string, int> trajectes; // trajecte, durada
+        map<string, int>::iterator trajMesLlarg; // iterador apuntant al trajecte de major durada
 
         // Pre: cert
         // Post: vector transports ordenat per nombre de persones de major a menor

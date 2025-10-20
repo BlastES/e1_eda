@@ -36,10 +36,15 @@ class Mobilitat {
         // transport amb el menor temps mig del respectiu codi de distancia i el segon element és el temps mig d'aquest transport
         vector<pair<string, double>> mesRapid() const;
 
+        // Pre: --
+        // Post: retorna el trajecte de major durada y el tipus de trajecte (comarcaIn - comarcaFi)
+        pair<string, double> trajecteMesLlarg() const;
+
+        vector<list<string>> trajectesNous() const;
+
     private:
         // Atributs
-        vector<Distancia> dist;
-        vector<Persona> persones;
+        vector<Distancia> dist; // Necesitem acces directe als diferents codis de distancia
 };
 
 

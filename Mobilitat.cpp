@@ -11,7 +11,6 @@ int Mobilitat::llegirDades(const string& path){
     for(int i = 1; i <= 7; i++){
         this->dist.push_back(Distancia(i));
     }
-    persones.clear();
     ifstream f;
     string linia;
     vector<string> items;
@@ -23,9 +22,8 @@ int Mobilitat::llegirDades(const string& path){
         while(!f.eof()){
             items = tokens(linia, ',', true);
             dist.at(stoi(items.at(7))-1).afegir(stoi(items.at(0)), stoi(items.at(2)), items.at(3), stoi(items.at(4))%24, stoi(items.at(6)), items.at(8), items.at(9), items.at(14), stoi(items.at(20)), items.at(22));
-            if(stoi(items.at(2)) == 1) persones.push_back(Persona(stoi(items.at(0)), stoi(items.at(20)), items.at(22)));
-            n_linies++;
             getline(f, linia);
+            n_linies++;
         }
         for(int i = 0; i < 7; i++){
             dist.at(i).ordenar_vec();
@@ -48,4 +46,25 @@ vector<pair<string, double>> Mobilitat::mesRapid() const{
         vec.push_back(i.mesRapid());
     }
     return vec;
+}
+
+pair<string, double> Mobilitat::trajecteMesLlarg() const{
+    pair<string, double> mesLlarg("", 0);
+    for(auto i : dist){
+        if(i.trajecteMesLlarg().second > mesLlarg.second) mesLlarg = i.trajecteMesLlarg();
+    }
+    return mesLlarg;
+}
+
+vector<list<string>> Mobilitat::trajectesNous() const{
+    vector<list<string>> resultat;
+    map<string, int> nous;
+    pair<map<string, int>::iterator, bool> act;
+    for(int i = 0; i < 7; i++){
+        for(auto j : dist.at(i).llistaTrajectes()){
+            act = nous.insert(pair<string, int>(j.first, j.second));
+            if(act.second) resultat.at(i).push_back(act.first->first);
+        }
+    }
+    return resultat;
 }

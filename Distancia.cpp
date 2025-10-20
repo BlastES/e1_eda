@@ -2,6 +2,7 @@
 
 Distancia::Distancia(int codi){
     this->codi = codi;
+    trajMesLlarg = trajectes.begin();
 }
 
 Distancia::Distancia(const Distancia& d){
@@ -26,6 +27,10 @@ void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int 
         transports.push_back(Transport(mitjaPrincipal));
         transports.back().afegir(id, ordre, tipusTrajecte, horaIn, durada, comarcaIn, comarcaFi, edat, estudis);
     }
+    pair<map<string, int>::iterator, bool> comprov = trajectes.insert(pair<string, int>(comarcaIn + " - " + comarcaFi, durada));
+    // guardem la durada mes llagra de un trajecte determinat si aquest ja exsisteix
+    if(!comprov.second && durada > comprov.first->second) comprov.first->second = durada;
+    if(durada > trajMesLlarg->second) trajMesLlarg = comprov.first;
 }
 
 void Distancia::ordenar_vec(){
@@ -64,6 +69,14 @@ pair<string, double> Distancia::mesRapid() const{
         mes_rapid.second = 0;
     }
     return mes_rapid;
+}
+
+pair<string, double> Distancia::trajecteMesLlarg() const{
+    return pair<string, double>(trajMesLlarg->first, double(trajMesLlarg->second));
+}
+
+map<string, int> Distancia::llistaTrajectes() const{
+    return trajectes;
 }
 
 Distancia& Distancia::operator=(const Distancia& d){

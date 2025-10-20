@@ -32,6 +32,18 @@ void titol_opcions(int i){
         cerr << string(19, '*') << endl;   
         break;     
 
+    case 5:
+        cerr << string(28, '*') << endl;
+        cerr << "* 05: Trajecte més llarg *" << endl;
+        cerr << string(28, '*') << endl;
+        break;
+
+    case 6:
+        cerr << string(23, '*') << endl;
+        cerr << "* 06: Trajectes nous *" << endl;
+        cerr << string(23, '*') << endl;
+        break;
+    
     default:
         break;
     }
@@ -91,7 +103,9 @@ void opcio_2(Mobilitat& mob){
     int codi_distancia;
     cin >> codi_distancia;
     int n_transports = mob.nombreTransports(codi_distancia);
-    cout << "Distància:" << codi_distancia << " ==> " << n_transports << endl;;  
+    cout << "Distància ";
+    codis_distancia(codi_distancia);
+    cout << " ==> " << n_transports << endl;
 }
 
 // Pre: cert
@@ -100,7 +114,8 @@ void opcio_2(Mobilitat& mob){
 void opcio_3(Mobilitat& mob){
     int codi_distancia;
     cin >> codi_distancia;
-    cout << "Distància " << codi_distancia << endl;
+    codis_distancia(codi_distancia);
+    cout << endl;
     vector<pair<string, int>> vec = mob.nombrePersonesPerTransport(codi_distancia);
     for(int i = 0; i < vec.size(); i++){
         cout << i << " : " << vec.at(i).first << " => " << vec.at(i).second << endl; 
@@ -118,7 +133,23 @@ void opcio_4(Mobilitat& mob){
     }
 }
 
-// Pre: 1 <= i <= 4
+void opcio_5(Mobilitat& mob){
+    pair<string, double> mesLlarg = mob.trajecteMesLlarg();
+    cout << "Trajecte més llarg : " << mesLlarg.first << " => " << mesLlarg.second << " minuts" << endl;
+}
+
+void opcio_6(Mobilitat& mob){
+    vector<list<string>> act = mob.trajectesNous();
+    for(int i = 1; i <= 7; i++){
+        codis_distancia(i);
+        cout << endl;
+        for(auto j : act.at(i)){
+            cout << j << endl;
+        }
+    }
+}
+
+// Pre: 1 <= i <= 6
 // Post: imprimeix el titol de la operació seleccionada i executa la tasca
 void operacions_menu(int i, Mobilitat& mob){
     titol_opcions(i);
@@ -140,6 +171,14 @@ void operacions_menu(int i, Mobilitat& mob){
         opcio_4(mob);
         break;
 
+    case 5:
+        opcio_5(mob);
+        break;
+
+    case 6:
+        opcio_6(mob);
+        break;
+    
     default:
         cerr << "Error en les opcions" << endl;
         break;

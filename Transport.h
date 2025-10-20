@@ -9,7 +9,8 @@
 #include <fstream>
 #include <limits>
 #include <string>
-#include <vector>
+#include <list>
+#include <set>
 #include "eines.h"
 #include "Persona.h"
 
@@ -39,6 +40,10 @@ class Transport {
         double obtenirTempsPromig() const;
 
         // Pre: cert
+        // Post: llista dades ordenada per durada
+        void ordenarTrajectes();
+
+        // Pre: cert
         // Post: true si this->nom = m.nom
         bool operator==(const Transport& m) const;
 
@@ -65,21 +70,22 @@ class Transport {
 
     private:
         struct Info{
-            int id;
+            Persona persona;
             int ordre;
             string tipusTrajecte;
             int horaIn;
             int durada;
-            string comarcaIn;
-            string comarcaFi;
-            int edat;
-            string estudis;
+            string trajecte; // comarcaIn - comarcaFi
         };
         // Atributs
         string nom;
-        vector<Info> dades;
-        vector<Persona> persones;
+
+        // Ordenada de menor a major durada
+        list<Info> dades; // Necessitem acces directe a l'ultim element de la llista en temps constant i necessitem que estigui ordenat per durada
+        set<Persona> persones; // No hi ha duplicats i insercio logaritmica
         double durada_total;
+
+        static bool comparacioDurada(const Info& primer, const Info& segon);
 
 
 };
