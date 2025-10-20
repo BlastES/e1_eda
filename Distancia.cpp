@@ -2,12 +2,10 @@
 
 Distancia::Distancia(int codi){
     this->codi = codi;
-    trajMesLlarg = trajectes.begin();
 }
 
 Distancia::Distancia(const Distancia& d){
-    this->codi = d.codi;
-    this->transports = d.transports;
+    copia(d);
 }
 
 void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int durada, string comarcaIn, string comarcaFi, string mitjaPrincipal, int edat, string estudis){
@@ -30,13 +28,14 @@ void Distancia::afegir(int id, int ordre, string tipusTrajecte, int horaIn, int 
     pair<map<string, int>::iterator, bool> comprov = trajectes.insert(pair<string, int>(comarcaIn + " - " + comarcaFi, durada));
     // guardem la durada mes llagra de un trajecte determinat si aquest ja exsisteix
     if(!comprov.second && durada > comprov.first->second) comprov.first->second = durada;
-    if(durada > trajMesLlarg->second) trajMesLlarg = comprov.first;
+    if(durada > trajMesLlarg.second){
+        trajMesLlarg = *comprov.first;
+    }
 }
 
 void Distancia::ordenar_vec(){
     quick_sort(0, transports.size()-1);
 }
-
 
 int Distancia::nombreTransports() const{
     return transports.size();
@@ -72,7 +71,7 @@ pair<string, double> Distancia::mesRapid() const{
 }
 
 pair<string, double> Distancia::trajecteMesLlarg() const{
-    return pair<string, double>(trajMesLlarg->first, double(trajMesLlarg->second));
+    return pair<string, double>(trajMesLlarg.first, double(trajMesLlarg.second));
 }
 
 map<string, int> Distancia::llistaTrajectes() const{
@@ -80,8 +79,7 @@ map<string, int> Distancia::llistaTrajectes() const{
 }
 
 Distancia& Distancia::operator=(const Distancia& d){
-    this->codi = d.codi;
-    this->transports = d.transports;
+    copia(d);
     return *this;
 }
 
@@ -110,4 +108,11 @@ void Distancia::intercanvi(Transport& x, Transport& y){
     Transport aux = x;
     x = y;
     y = aux;
+}
+
+void Distancia::copia(const Distancia& d){
+    this->codi = d.codi;
+    this->transports = d.transports;
+    this->trajectes = d.trajectes;
+    this->trajMesLlarg = d.trajMesLlarg;
 }

@@ -55,13 +55,15 @@ class Distancia {
         int codi;
         vector<Transport> transports;
         map<string, int> trajectes; // trajecte, durada
-        map<string, int>::iterator trajMesLlarg; // iterador apuntant al trajecte de major durada
+        pair<string, int> trajMesLlarg; // iterador apuntant al trajecte de major durada
 
         // Pre: cert
         // Post: vector transports ordenat per nombre de persones de major a menor
         void quick_sort(int esq, int dre);
         void particio(int esq, int dre, int& pos_pivot);
         void intercanvi(Transport& x, Transport& y);
+
+        void copia(const Distancia& d);
 };
 
 #endif // DISTANCIA_H

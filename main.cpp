@@ -143,8 +143,10 @@ void opcio_6(Mobilitat& mob){
     for(int i = 1; i <= 7; i++){
         codis_distancia(i);
         cout << endl;
-        for(auto j : act.at(i)){
-            cout << j << endl;
+        if(!act.at(i-1).empty()){
+            for(auto j : act.at(i-1)){
+                cout << string(5, ' ') << j << endl;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 #include "Mobilitat.h"
+#include <iostream>
 
 Mobilitat::Mobilitat(){
     for(int i = 1; i <= 7; i++){
@@ -57,7 +58,7 @@ pair<string, double> Mobilitat::trajecteMesLlarg() const{
 }
 
 vector<list<string>> Mobilitat::trajectesNous() const{
-    vector<list<string>> resultat;
+    vector<list<string>> resultat(7);
     map<string, int> nous;
     pair<map<string, int>::iterator, bool> act;
     for(int i = 0; i < 7; i++){
