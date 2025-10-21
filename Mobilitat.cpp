@@ -27,17 +27,7 @@ int Mobilitat::llegirDades(const string& path){
             n_linies++;
         }
         for(int i = 0; i < 7; i++){
-            vector<pair<string, int>> vec = nombrePersonesPerTransport(i+1);
-            for(int j = 0; j < vec.size(); j++){
-                cout << j << " : " << vec.at(j).first << " => " << vec.at(j).second << endl; 
-            }
-            cout << endl;
-            dist.at(i).ordenarLlista();
-            vec = nombrePersonesPerTransport(i+1);
-            for(int j = 0; j < vec.size(); j++){
-                cout << j << " : " << vec.at(j).first << " => " << vec.at(j).second << endl; 
-            }
-            cout << endl << endl;
+            dist.at(i).ordenar_vec();
         }
     } 
     return n_linies;

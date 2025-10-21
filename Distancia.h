@@ -27,7 +27,7 @@ class Distancia {
         
         // Pre: --
         // Post: vector transports ordenat per nombre de viatges de major a menor
-        void ordenarLlista();
+        void ordenar_vec();
 
         // Pre: --
         // Post: resultat = nombre d'elements de transports
@@ -53,10 +53,15 @@ class Distancia {
     private:
         // Atributs
         int codi;
-        list<Transport> transports;
+        vector<Transport> transports;
         map<string, int> trajectes; // trajecte, durada
         pair<string, int> trajMesLlarg; // iterador apuntant al trajecte de major durada
 
+        // Pre: cert
+        // Post: vector transports ordenat per nombre de persones de major a menor
+        void quick_sort(int esq, int dre);
+        void particio(int esq, int dre, int& pos_pivot);
+        void intercanvi(Transport& x, Transport& y);
 
         void copia(const Distancia& d);
 };

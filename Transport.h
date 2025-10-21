@@ -44,10 +44,24 @@ class Transport {
         void ordenarTrajectes();
 
         // Pre: cert
+        // Post: true si this->nom = m.nom
+        bool operator==(const Transport& m) const;
+
+        // Pre: cert
         // Post: true si this->dades.size() <  m.dades.size()
         bool operator<(const Transport& m) const;
 
-        bool operator==(const Transport& m) const;
+        // Pre: cert
+        // Post: true si this->dades.size() <=  m.dades.size()
+        bool operator<=(const Transport& m) const;
+
+        // Pre: cert
+        // Post: true si this->dades.size() >  m.dades.size()
+        bool operator>(const Transport& m) const;
+
+        // Pre: cert
+        // Post: true si this->dades.size() >=  m.dades.size()
+        bool operator>=(const Transport& m) const;
 
         // Pre: cert
         // Post: *this és copia de m i resultat = *this
