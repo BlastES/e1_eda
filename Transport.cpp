@@ -35,24 +35,13 @@ void Transport::ordenarTrajectes(){
     dades.sort(comparacioDurada);
 }
 
-bool Transport::operator==(const Transport &m) const{
-    return this->nom == m.nom;
-}
-
 bool Transport::operator<(const Transport &m) const{
-    return dades.size() < m.dades.size();
+    if(dades.size() != m.dades.size()) return dades.size() > m.dades.size();
+    else return *nom.begin() > *m.nom.begin();
 }
 
-bool Transport::operator<=(const Transport &m) const{
-    return dades.size() <= m.dades.size();
-}
-
-bool Transport::operator>(const Transport &m) const{
-    return dades.size() > m.dades.size();
-}
-
-bool Transport::operator>=(const Transport &m) const{
-    return dades.size() >= m.dades.size();
+bool Transport::operator==(const Transport& m) const{
+    return dades.size() == m.dades.size();
 }
 
 Transport& Transport::operator=(const Transport& m){
